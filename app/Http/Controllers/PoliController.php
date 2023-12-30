@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Poli;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class PoliController extends Controller
@@ -69,6 +70,11 @@ class PoliController extends Controller
     public function destroy(string $id)
     {
         $poli = Poli::find($id);
+        $dokter = User::where('poli_id', $id)->first();
+        if ($dokter) {
+            $dokter->update(['poli_id' => null]);
+        }
+
         $poli->delete();
 
         return response()->json([
