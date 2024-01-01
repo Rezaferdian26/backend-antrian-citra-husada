@@ -16,7 +16,8 @@ class AntrianController extends Controller
      */
     public function index()
     {
-        //
+        $antrians = Antrian::all();
+        return AntrianResource::collection($antrians);
     }
 
     /**
