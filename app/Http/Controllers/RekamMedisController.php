@@ -22,6 +22,12 @@ class RekamMedisController extends Controller
         $rekammedis = RekamMedis::where('id_pasien', auth()->user()->id)->get();
         return RekamMedisResource::collection($rekammedis);
     }
+
+    public function showForDokter()
+    {
+        $rekammedis = RekamMedis::where('id_dokter', auth()->user()->id)->get();
+        return RekamMedisResource::collection($rekammedis);
+    }
     public function store(Request $request)
     {
         $data = $request->validate([

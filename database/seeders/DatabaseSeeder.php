@@ -22,21 +22,18 @@ class DatabaseSeeder extends Seeder
         $dokter = \App\Models\User::factory()->create([
             'name' => 'dokter',
             'username' => 'dokter',
-            'email' => 'dokter@example.com',
         ]);
         $dokter->assignRole($roleDokter);
 
         $pasien = \App\Models\User::factory()->create([
             'name' => 'pasien',
             'username' => 'pasien',
-            'email' => 'pasien@example.com',
         ]);
         $pasien->assignRole($rolePasien);
 
         $operator = \App\Models\User::factory()->create([
             'name' => 'operator',
             'username' => 'operator',
-            'email' => 'operator@example.com',
         ]);
         $operator->assignRole($roleOperator);
     }

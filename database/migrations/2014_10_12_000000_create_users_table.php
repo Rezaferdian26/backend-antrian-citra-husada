@@ -15,15 +15,12 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('username')->unique();
-            $table->string('email')->unique()->nullable();
-            $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('jenis_kelamin')->nullable();
             $table->date('tgl_lahir')->nullable();
             $table->integer('umur')->nullable();
             $table->text('alamat')->nullable();
             $table->text('no_hp')->nullable();
-            $table->rememberToken();
 
             $table->string('no_identitas_pasien')->nullable();
             $table->string('no_bpjs_pasien')->nullable();

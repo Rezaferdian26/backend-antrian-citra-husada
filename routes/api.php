@@ -40,3 +40,4 @@ Route::get('get-antrian-by-dokter', [AntrianController::class, 'showByDokter'])-
 Route::post('rekam-medis', [RekamMedisController::class, 'store'])->middleware('auth:sanctum');
 Route::get('rekam-medis', [RekamMedisController::class, 'index'])->middleware('auth:sanctum');
 Route::get('rekam-medis-pasien', [RekamMedisController::class, 'showForPasien'])->middleware('auth:sanctum');
+Route::get('rekam-medis-dokter', [RekamMedisController::class, 'showForDokter'])->middleware('auth:sanctum');
