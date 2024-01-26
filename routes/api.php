@@ -32,7 +32,10 @@ Route::resource('pasien', PasienController::class)->only(['index', 'show', 'stor
 Route::resource('dokter', DokterController::class)->only(['index', 'show', 'store', 'update', 'destroy']);
 Route::get('get-dokter-by-poli/{poli}', [DokterController::class, 'getDokterByPoli'])->middleware('auth:sanctum');
 
+
+// OPERATOR
 Route::get('operator/me', [OperatorController::class, 'me'])->middleware('auth:sanctum');
+Route::get('operator/rekapitulasi/{date}', [OperatorController::class, 'rekapitulasi'])->middleware('auth:sanctum');
 
 Route::resource('antrian', AntrianController::class)->only(['index', 'show', 'store', 'update', 'destroy'])->middleware('auth:sanctum');
 Route::get('get-antrian-by-dokter', [AntrianController::class, 'showByDokter'])->middleware('auth:sanctum');
